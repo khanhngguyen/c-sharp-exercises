@@ -1,0 +1,14 @@
+/Users/khanhngguyen/Downloads/KHANH/c-sharp-exercises/bin/Debug/net8.0/c-sharp-exercises
+/Users/khanhngguyen/Downloads/KHANH/c-sharp-exercises/bin/Debug/net8.0/c-sharp-exercises.deps.json
+/Users/khanhngguyen/Downloads/KHANH/c-sharp-exercises/bin/Debug/net8.0/c-sharp-exercises.runtimeconfig.json
+/Users/khanhngguyen/Downloads/KHANH/c-sharp-exercises/bin/Debug/net8.0/c-sharp-exercises.dll
+/Users/khanhngguyen/Downloads/KHANH/c-sharp-exercises/bin/Debug/net8.0/c-sharp-exercises.pdb
+/Users/khanhngguyen/Downloads/KHANH/c-sharp-exercises/obj/Debug/net8.0/c-sharp-exercises.GeneratedMSBuildEditorConfig.editorconfig
+/Users/khanhngguyen/Downloads/KHANH/c-sharp-exercises/obj/Debug/net8.0/c-sharp-exercises.AssemblyInfoInputs.cache
+/Users/khanhngguyen/Downloads/KHANH/c-sharp-exercises/obj/Debug/net8.0/c-sharp-exercises.AssemblyInfo.cs
+/Users/khanhngguyen/Downloads/KHANH/c-sharp-exercises/obj/Debug/net8.0/c-sharp-exercises.csproj.CoreCompileInputs.cache
+/Users/khanhngguyen/Downloads/KHANH/c-sharp-exercises/obj/Debug/net8.0/c-sharp-exercises.dll
+/Users/khanhngguyen/Downloads/KHANH/c-sharp-exercises/obj/Debug/net8.0/refint/c-sharp-exercises.dll
+/Users/khanhngguyen/Downloads/KHANH/c-sharp-exercises/obj/Debug/net8.0/c-sharp-exercises.pdb
+/Users/khanhngguyen/Downloads/KHANH/c-sharp-exercises/obj/Debug/net8.0/c-sharp-exercises.genruntimeconfig.cache
+/Users/khanhngguyen/Downloads/KHANH/c-sharp-exercises/obj/Debug/net8.0/ref/c-sharp-exercises.dll

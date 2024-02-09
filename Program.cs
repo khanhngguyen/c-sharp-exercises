@@ -11,6 +11,8 @@
 // then store elements from 0 to k - 1 into temp array
 // copy temp array into original array
 
+using System.Net.Security;
+
 static void LeftRotation1(int[] arr, int k)
 {
     int n = arr.Length;
@@ -143,3 +145,149 @@ for (int i = 0; i < n; i++)
 }
 Console.WriteLine($"\nFibonacci at {n}th position is: {Fibonacci(n)}");
 Console.WriteLine("\n");
+
+// 5. Check if a string is a palindrome
+static bool Palindrome(string text)
+{
+    string input = text.ToLower();
+    string reverse = string.Empty;
+    for (int i = text.Length - 1; i >= 0; i--)
+    {
+        reverse += input[i];
+    }
+    return string.Equals(input, reverse);
+}
+
+Console.WriteLine("5. Check Palindrome: ");
+string word = "Racecar";
+Console.WriteLine($"{word} is palindrome: {Palindrome(word)}");
+Console.WriteLine("\n");
+
+// 6. Given a string, find the longest subsequence consisting of a single character.
+// e.g. "AABCDDDDBBBEAA" should return "DDDD"
+static string LongestSubstring(string input)
+{
+    char char_max = input[0];
+    char char_current = input[0];
+
+    int count_max = 1;
+    int count_current = 1;
+
+    string output = string.Empty;
+
+    for (int i = 1; i < input.Length; i++)
+    {
+        if (input[i] == input[i - 1])
+        {
+            count_current++;
+            if (count_max < count_current)
+            {
+                count_max = count_current;
+                char_max = input[i];
+            } 
+            
+        } else 
+        {
+            char_current = input[i];
+            count_current = 1;
+        }
+    }
+
+    for (int i = 0; i < count_max; i++)
+    {
+        output += char_max;
+    }
+    return output;
+}
+
+string longText = "AABCDDDDBBEAA";
+Console.WriteLine($"6. Longest subsequence in string {longText} is {LongestSubstring(longText)}");
+Console.WriteLine("\n");
+
+// 7. Insert an int item in a sorted linkedlist so that list remains sorted.
+// assume that linked list is in increasing order
+
+// if linked list is empty => return new node as head of linked list
+// start from 1st node, if new node < 1st => add before, if not, move to next node until last node
+static void InsertLinkedList(LinkedList<int> list, LinkedListNode<int> node)
+{
+    if (list.Count == 0)
+    {
+        list.AddFirst(node);
+    } else 
+    {
+        LinkedListNode<int> current = list.First!;
+        bool last = true;
+        while (current != null)
+        {
+            if (node.Value < current.Value) 
+            {
+                list.AddBefore(current, node);
+                last = false;
+                break;
+            }
+            current = current.Next;
+        }
+        // if none of nodes in linked list < new node => new node should be inserted to last
+        if (last) list.AddLast(node);
+    }
+}
+
+int[] numbers = [2, 5, 7, 10, 13];
+LinkedList<int> numLinkedList = new(numbers);
+LinkedListNode<int> newNode = new(9);
+static void DisplayLinkedList(LinkedList<int> nums)
+{
+    foreach (int num in nums)
+    {
+        Console.Write(num + " ");
+    }
+    Console.WriteLine();
+}
+Console.WriteLine($"7. Insert an int item in a sorted linked list and keep the list remains sorted");
+Console.WriteLine($"Linked list before insert: ");
+DisplayLinkedList(numLinkedList);
+Console.WriteLine($"Insert new node: {newNode}");
+InsertLinkedList(numLinkedList, newNode);
+Console.WriteLine($"Linked list after insert: ");
+DisplayLinkedList(numLinkedList);
+
+Console.WriteLine("\n");
+
+// 8. Remove duplicate ints from a sorted linkedlist
+// traverse linked list from head. Compare each node to next node
+// if equals, remove next node, move to next next node.
+static void RemoveDuplicate(LinkedList<int> list)
+{
+    LinkedListNode<int> current = list.First;
+    LinkedListNode<int> next = current.Next;
+    // if linked list is empty, do nothing
+    if (current == null) return;
+
+    // traverse & compare
+    while (current != null && next != null)
+    {
+        if (current.Value == next.Value)
+        {
+            list.Remove(next);
+            
+            // current is automatically pointing to next value is linked list
+            // assign next to continue comparision
+            next = current.Next;
+        } else 
+        {
+            // move current to next node, move next to a node after current
+            current = current.Next;
+            next = current.Next;
+        }
+    }
+}
+
+int[] numbersDuplicate = [2, 2, 5, 7, 7, 9, 10, 10, 13, 13];
+LinkedList<int> numbersLinkedListDuplicate = new(numbersDuplicate);
+Console.WriteLine("8. Remove duplicate ints from a sorted linked list");
+Console.WriteLine($"Linked list before remove duplicate: ");
+DisplayLinkedList(numbersLinkedListDuplicate);
+Console.WriteLine($"Linked list after remove duplicate: ");
+RemoveDuplicate(numbersLinkedListDuplicate);
+DisplayLinkedList(numbersLinkedListDuplicate);

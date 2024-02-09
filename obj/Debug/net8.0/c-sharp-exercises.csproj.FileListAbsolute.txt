@@ -12,3 +12,4 @@
 /Users/khanhngguyen/Downloads/KHANH/c-sharp-exercises/obj/Debug/net8.0/c-sharp-exercises.pdb
 /Users/khanhngguyen/Downloads/KHANH/c-sharp-exercises/obj/Debug/net8.0/c-sharp-exercises.genruntimeconfig.cache
 /Users/khanhngguyen/Downloads/KHANH/c-sharp-exercises/obj/Debug/net8.0/ref/c-sharp-exercises.dll
+/Users/khanhngguyen/Downloads/KHANH/c-sharp-exercises/obj/Debug/net8.0/c-sharp-exercises.sourcelink.json

@@ -291,3 +291,67 @@ DisplayLinkedList(numbersLinkedListDuplicate);
 Console.WriteLine($"Linked list after remove duplicate: ");
 RemoveDuplicate(numbersLinkedListDuplicate);
 DisplayLinkedList(numbersLinkedListDuplicate);
+
+
+// 9. Given a time in 12-hour AM/PM format, convert it to 24-hour format time.
+// Midnight is 12:00:00AM on a 12-hour clock, and 00:00:00 on a 24-hour clock.
+// Noon is 12:00:00PM on a 12-hour clock, and 12:00:00 on a 24-hour clock.
+// e.g. input: "01:05:45AM", output should be: "01:05:45"
+static string TimeConversion(string s)
+{
+    string[] time = s.Split(':').Select(x => x.Substring(0,2)).ToArray();
+    var isPM = s.Remove(0,8) == "PM";
+    var hours = int.Parse(time[0]);
+    if(isPM && hours == 12)
+        hours %= 24;
+    if(isPM && hours < 12)
+        hours += 12;
+
+    time[0] = hours.ToString("00");
+    return string.Join(":", time);    
+}
+
+Console.WriteLine("9. Convert time from 12-hour AM/PM format to 24-hour format");
+Console.WriteLine(TimeConversion("01:05:45AM"));
+Console.WriteLine("\n");
+
+// 10. A University has a following grading policy:
+// Students' grades are from 0 - 100. If grade < 40 is a fail
+// Rounding grade policy:
+// If the difference between grade and the next multiple of 5 is less than 3, round grade up to the next multiple of 5.
+// If grade < 38, no rounding occurs as the result will still be a failing grade. 
+// E.g. 84 will be rounded to 85
+// E.g. 29 will not be rounded because the grade < 38
+// Input: int[] grades
+// Output: rounded int[] grades
+
+static void RoundGrades(int[] grades)
+{
+    for (int i = 0; i < grades.Length; i++)
+    {
+        int grade = grades[i];
+        if (grade < 38)
+            continue;
+        int difference = 5 - (grade % 5);
+        if (difference < 3) 
+        {
+            grades[i] += difference;
+        }
+    }
+}
+
+static void DisplayGrades(int[] grades)
+{
+    foreach(int grade in grades)
+    {
+        Console.Write(grade + " ");
+    }
+    Console.WriteLine("");
+}
+int[] grades = [ 4, 73, 67, 38, 33 , 70 ];
+Console.WriteLine("10. Rounding grades: ");
+Console.WriteLine("Grades before rounding:");
+DisplayGrades(grades);
+Console.WriteLine("Grades after rounding:");
+RoundGrades(grades);
+DisplayGrades(grades);
